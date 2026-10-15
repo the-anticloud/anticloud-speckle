@@ -1,0 +1,571 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "SPECKLE",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\ARCHITECTURAL_DESIGN\\SPECKLE\\UPSTREAM_CLONE",
+    "git": {
+      "head": "",
+      "url": "https://github.com/the-anticloud/OPENMRS_CORE.git",
+      "branch": "master",
+      "committed_at": "2026-09-29T11:06:59+04:00"
+    }
+  },
+  "metrics": {
+    "files_total": 1987,
+    "source_files_scanned": 1365,
+    "lines_of_code": 191180,
+    "languages": {
+      ".cs": 1253,
+      ".png": 174,
+      ".csproj": 127,
+      ".xaml": 73,
+      ".hpp": 57,
+      ".cpp": 53,
+      ".rft": 40,
+      ".json": 37,
+      ".md": 19,
+      ".projitems": 18,
+      ".shproj": 18,
+      ".sln": 15,
+      "(none)": 14,
+      ".slnf": 11,
+      ".xml": 11
+    }
+  },
+  "licence": {
+    "spdx": "Apache-2.0",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 0,
+    "unique": 0,
+    "by_ecosystem": {},
+    "list": []
+  },
+  "owasp_top10": {
+    "total_findings": 202,
+    "files_with_findings": 190,
+    "severity": {
+      "high": 4,
+      "medium": 13,
+      "low": 185
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 14,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "Core/Tests/Speckle.Core.Tests.Unit/Models/UtilitiesTests.cs",
+            "line": 13,
+            "cwe": "CWE-327",
+            "snippet": "public void Md5(string input, string expected)"
+          },
+          {
+            "severity": "medium",
+            "file": "Core/Core/Models/Utilities.cs",
+            "line": 35,
+            "cwe": "CWE-327",
+            "snippet": "HashingFunctions.MD5 => Crypt.Md5(input, length: HashLength),"
+          },
+          {
+            "severity": "medium",
+            "file": "Core/Core/Logging/SpeckleLog.cs",
+            "line": 246,
+            "cwe": "CWE-327",
+            "snippet": "var id = Crypt.Md5($\"{machineName}:{userName}\", \"X2\");"
+          },
+          {
+            "severity": "medium",
+            "file": "Core/Core/Helpers/Crypt.cs",
+            "line": 39,
+            "cwe": "CWE-327",
+            "snippet": "public static string Md5(string input, string? format = \"x2\", int startIndex = 0, int length = 32)"
+          },
+          {
+            "severity": "medium",
+            "file": "Core/Core/Credentials/Account.cs",
+            "line": 28,
+            "cwe": "CWE-327",
+            "snippet": "_id = Crypt.Md5(userInfo.email + serverInfo.url, \"X2\");"
+          },
+          {
+            "severity": "medium",
+            "file": "ConnectorTeklaStructures/ConnectorTeklaStructuresShared/UI/ConnectorBindingsTeklaStructures.cs",
+            "line": 46,
+            "cwe": "CWE-327",
+            "snippet": "Utilities.HashString(Model.GetInfo().ModelPath + Model.GetInfo().ModelName, Utilities.HashingFunctions.MD5);"
+          },
+          {
+            "severity": "medium",
+            "file": "ConnectorRhino/ConnectorRhino/ConnectorRhinoShared/UI/ConnectorBindingsRhino.cs",
+            "line": 96,
+            "cwe": "CWE-327",
+            "snippet": "return Utilities.HashString(\"X\" + Doc?.Path + Doc?.Name, Utilities.HashingFunctions.MD5);"
+          },
+          {
+            "severity": "medium",
+            "file": "ConnectorNavisworks/ConnectorNavisworks/Bindings/ConnectorNavisworksBindings.cs",
+            "line": 91,
+            "cwe": "CWE-327",
+            "snippet": "var hash = Core.Models.Utilities.HashString(fileName, Core.Models.Utilities.HashingFunctions.MD5);"
+          },
+          {
+            "severity": "high",
+            "file": "ConnectorGrasshopper/ConnectorGrasshopperShared/Objects/CreateSpeckleObjectTaskComponent.cs",
+            "line": 30,
+            "cwe": "CWE-327",
+            "snippet": "public override Guid ComponentGuid => new(\"DC561A9D-BF12-4EB3-8412-4B7FC6ECB291\");"
+          },
+          {
+            "severity": "medium",
+            "file": "ConnectorCSI/ConnectorCSIShared/UI/ConnectorBindingsCSI.cs",
+            "line": 34,
+            "cwe": "CWE-327",
+            "snippet": "Utilities.HashString(Model.GetModelFilepath() + Model.GetModelFilename(), Utilities.HashingFunctions.MD5);"
+          },
+          {
+            "severity": "medium",
+            "file": "ConnectorBentley/ConnectorBentleyShared/UI/Bindings.cs",
+            "line": 104,
+            "cwe": "CWE-327",
+            "snippet": "Speckle.Core.Models.Utilities.HashingFunctions.MD5"
+          },
+          {
+            "severity": "medium",
+            "file": "ConnectorAutocadCivil/ConnectorAutocadCivil/UI/ConnectorBindingsAutocadCivil.cs",
+            "line": 121,
+            "cwe": "CWE-327",
+            "snippet": "? Utilities.HashString(docString, Utilities.HashingFunctions.MD5)"
+          },
+          {
+            "severity": "medium",
+            "file": "ConnectorArchicad/AddOn/Sources/AddOn/LibpartImportManager.cpp",
+            "line": 468,
+            "cwe": "CWE-327",
+            "snippet": "MD5::FingerPrint checkSum;"
+          },
+          {
+            "severity": "medium",
+            "file": "ConnectorArchicad/AddOn/Sources/AddOn/PropertyExportManager.cpp",
+            "line": 271,
+            "cwe": "CWE-327",
+            "snippet": "MD5::FingerPrint checkSum;"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 0,
+        "findings": []
+      },
+      "A04-InsecureDesign": {
+        "count": 174,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "Objects/Objects/Other/Instance.cs",
+            "line": 127,
+            "cwe": "CWE-",
+            "snippet": "// OLD: TODO: need to verify"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/Other/Transform.cs",
+            "line": 135,
+            "cwe": "CWE-",
+            "snippet": "// TODO: Add tests and figure out exactly why this is. Jedd and myself have some theories but it would be nice to document this properly"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/Other/Revit/RevitInstance.cs",
+            "line": 63,
+            "cwe": "CWE-",
+            "snippet": "// TODO: Check for Revit in GH/DYN"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/Organization/Model.cs",
+            "line": 24,
+            "cwe": "CWE-",
+            "snippet": "//  TODO: not sure about adding a typed `elements` list here? prob should let ppl add whatever named categories here?"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/Geometry/Brep.cs",
+            "line": 221,
+            "cwe": "CWE-",
+            "snippet": "ints.AddRange(e.TrimIndices.Select(Convert.ToDouble).Cast<double?>());"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/Geometry/Point.cs",
+            "line": 14,
+            "cwe": "CWE-",
+            "snippet": "/// TODO: The Point class does not override the Equality operator, which means that there may be cases where `Equals` is used instead of `==`, as the comparison will be done by ref"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/Geometry/Polyline.cs",
+            "line": 117,
+            "cwe": "CWE-",
+            "snippet": "public double ToDouble(IFormatProvider provider)"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/BuiltElements/Duct.cs",
+            "line": 62,
+            "cwe": "CWE-",
+            "snippet": ": this(baseLine, width, height, diameter, default, null, velocity) //TODO: what to do with length???"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/BuiltElements/Topography.cs",
+            "line": 27,
+            "cwe": "CWE-",
+            "snippet": "//TODO Figure out if we should add a new constructor that takes a List<Mesh> or if Topography should just have a single mesh display value"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/BuiltElements/TeklaStructures/TeklaContourPlate.cs",
+            "line": 10,
+            "cwe": "CWE-",
+            "snippet": "// TODO: This class really shouldn't inherit from Area, but we need to fix the inheritance chain in the future."
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/BuiltElements/Revit/DirectShape.cs",
+            "line": 40,
+            "cwe": "CWE-",
+            "snippet": "//TODO: move to typed property alongside all other revit elements"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/BuiltElements/Revit/RevitDuct.cs",
+            "line": 108,
+            "cwe": "CWE-",
+            "snippet": "default, //TODO: what to do with length?"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/BuiltElements/Revit/RevitWall.cs",
+            "line": 223,
+            "cwe": "CWE-",
+            "snippet": "//   // TODO"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/BuiltElements/Archicad/Property.cs",
+            "line": 48,
+            "cwe": "CWE-",
+            "snippet": "// todo"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/BuiltElements/AdvanceSteel/AsteelPlate.cs",
+            "line": 9,
+            "cwe": "CWE-",
+            "snippet": "// TODO: This class really shouldn't inherit from Area, but we need to fix the inheritance chain in the future."
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Objects/BuiltElements/AdvanceSteel/AsteelSlab.cs",
+            "line": 9,
+            "cwe": "CWE-",
+            "snippet": "// TODO: This class really shouldn't inherit from Area, but we need to fix the inheritance chain in the future."
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Converters/ConverterRhinoGh/ConverterRhinoGhShared/ConverterRhinoGh.BuiltElements.cs",
+            "line": 90,
+            "cwe": "CWE-",
+            "snippet": "/* TODO: debug this and see if it helps better match views from revit"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Converters/ConverterRhinoGh/ConverterRhinoGhShared/ConverterRhinoGh.cs",
+            "line": 102,
+            "cwe": "CWE-",
+            "snippet": "// TODO: Both settings bellow are here for backwards compatibility and should be removed after consolidating settings"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Converters/ConverterRhinoGh/ConverterRhinoGhShared/ConverterRhinoGh.Geometry.cs",
+            "line": 261,
+            "cwe": "CWE-",
+            "snippet": "// TODO: handle conversions that define Radius1/Radius2 as major/minor instead of xaxis/yaxis"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Converters/ConverterRhinoGh/ConverterRhinoGhShared/ConverterRhinoGh.Other.cs",
+            "line": 178,
+            "cwe": "CWE-",
+            "snippet": "//TODO Convert materials as PhysicallyBasedMaterial"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Converters/ConverterRevit/ConverterRevitTests/TestGenerator/Globals.cs",
+            "line": 9,
+            "cwe": "CWE-",
+            "snippet": "/// TODO: Consolidate"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Converters/ConverterRevit/ConverterRevitTests/ConverterRevitTestsShared/Globals.cs",
+            "line": 36,
+            "cwe": "CWE-",
+            "snippet": "/// TODO: Consolidate"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Converters/ConverterRevit/ConverterRevitShared/ConversionUtils.cs",
+            "line": 290,
+            "cwe": "CWE-",
+            "snippet": "//TODO: move this to a typed property, define full list of categories in Objects"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Converters/ConverterRevit/ConverterRevitShared/ConverterRevit.cs",
+            "line": 446,
+            "cwe": "CWE-",
+            "snippet": "// HACK: This is an explicit exception for DirectShapes. This is the only object class that does not have a"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Converters/ConverterRevit/ConverterRevitShared/RevitCommitObjectBuilder.cs",
+            "line": 213,
+            "cwe": "CWE-",
+            "snippet": "Autodesk.Revit.DB.Architecture.Railing i => i.HasHost ? i.Document.GetElement(i.HostId) : null, //TODO: Check if this HasHost is required"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 3,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "Core/Core/Logging/Analytics.cs",
+            "line": 83,
+            "cwe": "CWE-798",
+            "snippet": "private const string MIXPANEL_TOKEN = \"acd87c5a50b56df91a795e999812a3a4\";"
+          },
+          {
+            "severity": "high",
+            "file": "Core/Core/Logging/SpeckleLog.cs",
+            "line": 61,
+            "cwe": "CWE-798",
+            "snippet": "private const string DEFAULT_SEQ_TOKEN = \"EzYqoMOmkow12Lw0KYXp\";"
+          },
+          {
+            "severity": "high",
+            "file": "ConnectorCore/DllConflictManagement/Analytics/AnalyticsWithoutDependencies.cs",
+            "line": 18,
+            "cwe": "CWE-798",
+            "snippet": "private const string MIXPANEL_TOKEN = \"acd87c5a50b56df91a795e999812a3a4\";"
+          }
+        ]
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 11,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "Objects/Converters/StructuralUtilities/PolygonMesher/Extensions.cs",
+            "line": 20,
+            "cwe": "CWE-319",
+            "snippet": "// Adapted from: http://geomalgorithms.com/a03-_inclusion.html"
+          },
+          {
+            "severity": "low",
+            "file": "Objects/Converters/ConverterDynamo/ConverterDynamoShared/Utils.cs",
+            "line": 144,
+            "cwe": "CWE-319",
+            "snippet": "//http://www.numericana.com/answer/ellipse.htm"
+          },
+          {
+            "severity": "low",
+            "file": "Core/Tests/Speckle.Core.Tests.Unit/Api/GraphQLClient.cs",
+            "line": 22,
+            "cwe": "CWE-319",
+            "snippet": "serverInfo = new ServerInfo { url = \"http://goto.testing\" }"
+          },
+          {
+            "severity": "low",
+            "file": "Core/Tests/Speckle.Core.Tests.Integration/Fixtures.cs",
+            "line": 28,
+            "cwe": "CWE-319",
+            "snippet": "public static readonly ServerInfo Server = new() { url = \"http://localhost:3000\", name = \"Docker Server\" };"
+          },
+          {
+            "severity": "low",
+            "file": "Core/Tests/Speckle.Core.Tests.Integration/Credentials/UserServerInfoTests.cs",
+            "line": 29,
+            "cwe": "CWE-319",
+            "snippet": "Uri serverUrl = new(\"http://invalidserver.local\");"
+          },
+          {
+            "severity": "low",
+            "file": "Core/Core/Credentials/AccountManager.cs",
+            "line": 566,
+            "cwe": "CWE-319",
+            "snippet": "var localUrl = \"http://localhost:29363/\";"
+          },
+          {
+            "severity": "low",
+            "file": "Core/Core/Credentials/StreamWrapper.cs",
+            "line": 24,
+            "cwe": "CWE-319",
+            "snippet": "/// <param name=\"streamUrlOrId\">Stream Url eg: http://speckle.server/streams/8fecc9aa6d/commits/76a23d7179  or stream ID eg: 8fecc9aa6d</param>"
+          },
+          {
+            "severity": "low",
+            "file": "ConnectorRevit/ConnectorRevit/TypeMapping/FamilyImporter.cs",
+            "line": 191,
+            "cwe": "CWE-319",
+            "snippet": "nsman.AddNamespace(\"ab\", \"http://www.w3.org/2005/Atom\");"
+          },
+          {
+            "severity": "low",
+            "file": "ConnectorGrasshopper/ConnectorGrasshopperShared/Extras/SpeckleStateTag.cs",
+            "line": 10,
+            "cwe": "CWE-",
+            "snippet": "public class OptionalStateTag : SpeckleStateTag"
+          },
+          {
+            "severity": "low",
+            "file": "ConnectorArchicad/ConnectorArchicad/Communication/ConnectionManager.cs",
+            "line": 23,
+            "cwe": "CWE-319",
+            "snippet": "BaseAddress = new System.Uri(\"http://127.0.0.1:\" + portNumber),"
+          },
+          {
+            "severity": "low",
+            "file": "Automate/Speckle.Automate.Sdk/Test/TestAutomateEnvironment.cs",
+            "line": 60,
+            "cwe": "CWE-319",
+            "snippet": "GetAppSettings()?.SpeckleServerUrl ?? TryGetEnvironmentVariable(\"SPECKLE_SERVER_URL\") ?? \"http://127.0.0.1:3000\";"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 1,
+    "files_with_findings": 1,
+    "severity": {
+      "high": 0,
+      "medium": 1,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "DesktopUI2/DesktopUI2/Models/NotificationManager.cs",
+            "line": 140,
+            "cwe": "CWE-1336",
+            "snippet": "protected override void OnApplyTemplate(TemplateAppliedEventArgs e)"
+          }
+        ]
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:aa2d9afd-6187-5f97-87c6-89666b10bc23",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T07:06:11Z",
+      "component": {
+        "type": "application",
+        "name": "SPECKLE",
+        "version": "83b357604d34",
+        "bom-ref": "pkg:generic/anticloud/SPECKLE@83b357604d34",
+        "purl": "pkg:generic/anticloud/SPECKLE@83b357604d34",
+        "licenses": [
+          {
+            "license": {
+              "id": "Apache-2.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": ""
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": []
+  },
+  "elapsed_seconds": 146.51
+}
