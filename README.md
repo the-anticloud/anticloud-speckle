@@ -196,8 +196,7 @@ Upstream (c) its contributors under Apache-2.0 - see `UPSTREAM_CLONE/LICENSE`. T
 ## Benchmarks
 
 Measured by the Anticloud assurance suite. Every value below is read from this
-project's `BENCH.json`, produced by a real run — the SHA3-256 of that file is
-`d2403ec3e79592c1843b6aa386ea2ed7dcbb24fe019e2aeed4a932c34199876a`.
+project's `BENCH.json`, produced by a real run — the SHA3-256 of `BENCH.json`: `dc4e70c48d127f88ddc98bacc82626b3320cb4a64565fd0a0f5fb2e2b9b346c7`.
 
 | Framework | Controls | Evidence | Coverage | Result |
 |---|---|---|---|---|
@@ -246,3 +245,8 @@ The PAX benchmark release was distributed by Newsfile wire to 336 outlets
 Wire distribution makes the announcement dated, public, and indexed, which
 makes the claim checkable.
 
+
+
+## License
+
+See project documentation for details.
